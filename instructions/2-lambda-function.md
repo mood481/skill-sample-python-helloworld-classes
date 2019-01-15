@@ -1,76 +1,76 @@
-# Build an Alexa Hello World Skill in ASK Python SDK
+# Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-on._TTH_.png)](./2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](./3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](./4-testing.md)[![Next steps](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](./5-next-steps.md)
+[![Interfaz Vocal de Usuario (VUI)](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Función Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-on._TTH_.png)](./2-lambda-function.md)[![Conectar la VUI al Código](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](./3-connect-vui-to-code.md)[![Pruebas](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](./4-testing.md)[![Próximos pasos](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](./5-next-steps.md)
 
-## Setting Up A Lambda Function Using Amazon Web Services
+## Configurando una función Lambda usando Amazon Web Services
 
-In the [first step of this guide](1-voice-user-interface.md), we built the Voice User Interface (VUI) for our Alexa skill.  On this page, we will be creating a Lambda function using [Amazon Web Services](http://aws.amazon.com).  You can [read more about what a Lambda function is](http://aws.amazon.com/lambda), but for the purposes of this guide, what you need to know is that Lambda is where our code lives.  When a user asks Alexa to use our skill, it is our Lambda function that interprets the appropriate interaction, and provides the conversation back to the user.
+En el [primer paso de esta guía](1-voice-user-interface.md), creamos la interfaz vocal de usuario (VUI) para nuestro skill de Alexa.  En esta página, crearemos una función Lambda usando [Amazon Web Services](http://aws.amazon.com).  Puedes [leer más sobre qué es una función Lambda](https://aws.amazon.com/es/lambda/), pero para el propósito de esta guía, lo que necesitas saber es que Lambda es donde vive nuestro código.  Cuando un usuario pide a Alexa que use nuestro skill, es nuestra función Lambda la que interpreta la interacción apropiada, y proporciona los elementos de conversación de vuelta al usuario.
 
-1.  **Go to http://aws.amazon.com and sign in to the console.** If you don't already have an account, you will need to create one.  [Check out this quick walkthrough for setting up a new AWS account](https://github.com/alexa/alexa-cookbook/blob/master/aws/set-up-aws.md).
+1.  **Ve a http://aws.amazon.com e inicia sesión en la consola.** Si aún no tienes una cuenta, necesitarás crear una. [Visita esta guía rápida de configuración de una nueva cuenta AWS (en Inglés)](https://github.com/alexa/alexa-cookbook/blob/master/guides/aws-security-and-setup/set-up-aws.md).
 
-    [![Sign In](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-1-sign-in-to-the-console._TTH_.png)](https://console.aws.amazon.com/console/home)
+    [![Iniciar sesión](https://i.imgur.com/q1kDpx8.png)](https://console.aws.amazon.com/console/home)
 
-2.  **Choose "Services" at the top of the screen, and type "Lambda" in the search box.**  You can also find it in the list of services.  It is in the "Compute" section.
+2.  **Elige "Services" en la parte superior de la pantalla y escribe "Lambda" en la caja de búsqueda.**  Puedes también encontrarla en la lista de servicios.  Está en la sección "Compute".
 
     [![Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-2-services-lambda._TTH_.png)](https://console.aws.amazon.com/lambda/home)
 
-3.  **Check your AWS region.** Lambda only works with the Alexa Skills Kit in four regions: US East (N. Virginia), EU (Ireland), US West (Oregon) and Asia Pacific (Tokyo).  Make sure you choose the region closest to your customers.
+3.  **Comprueba tu región AWS.** Lambda solo funciona con el Kit de Alexa Skills en cuatro regiones: US East (N. Virginia), EU (Ireland), US West (Oregon) y Asia Pacific (Tokyo).  Asegúrate de que eliges la región más cercana a tus clientes.
 
-    ![Lambda Regions](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-3-check-region._TTH_.png)
+    ![Regiones lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-3-check-region._TTH_.png)
 
-4.  **Click the "Create a Lambda function" button.** It should be near the top of your screen.
+4.  **Haz clic en el botón "Crear una función".** Debería estar cerca de la parte superior de la pantalla.
 
-    ![Create Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-4-create-a-lambda-function._TTH_.png)
+    ![Crear función](https://i.imgur.com/hjMvbf2.png)
 
-5.  **Click on "Author from scratch".**  We will configure our Lambda function next.
-    1. These values will only ever be visible to you, but make sure that you name your function something meaningful. "samplePythonHelloWorld" is sufficient if you don't have another idea for a name.
+5.  **Haz clic en "Crear desde cero".**  Configuraremos nuestra función Lambda a continuación.
+    1. Estos valores únicamente serán visibles para tí, pero asegúrate de que das un nombre significativo a tu función. "ejemploPythonHolaMundo" será suficiente si no tienes otra idea para un nombre.
 
-    2. From the "Runtime" dropdown select the python version your system supports.  This tutorial and sample code works with either Python 2.7 or 3.6. To check the python version, try the following command in a terminal
+    2. Del menú desplegable "Tiempo de ejecución" selecciona la versión de Python que soporta tu sistema.  Este tutorial, y el código de ejemplo, funcionan ya sea con Python 2.7 o 3.6. Para comprobar la versión de Python, intenta usar el siguiente comando en un terminal.
         ```
         $ python --version
         Python 2.7.10
         ```
 
-    3. **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://github.com/alexa/alexa-cookbook/blob/master/guides/aws-security-and-setup/lambda-role.md).  If you have done this before, you only need to select the **Existing role**.
+    3. **Configura un rol para tu función Lambda.**  Si no has hecho esto anteriormente, tenemos una [guía detallada para configurar tu primer rol para Lambda (Inglés)](https://github.com/alexa/alexa-cookbook/blob/master/guides/aws-security-and-setup/lambda-role.md).  Si ya lo has hecho anteriormente, solo necesitarás seleccionar un rol en el desplegable **Rol existente**.
 
-    4. Click **Create function**.
+    4. Haz click en **Crear una función**.
 
-6.  **Configure your trigger.** There are many different AWS services that can trigger a Lambda function, but for the purposes of this guide, we need to select "Alexa Skills Kit." from the left hand side.
+6.  **Configura tu desencadenador.** Existen muchos servicios AWS diferentes que pueden desencadenar la ejecución de una función Lambda, pero para el propósito de esta guía, necesitamos seleccionar "Alexa Skills Kit" desde las opciones situadas a nuestra izquierda.
 
-    Once you have selected Alexa Skills Kit, scroll down and find the Skill ID verification section.  Although you will want to paste your skill's ID in the Skill ID field, however for this tutorial, click Disable.  Click the **Add** button in the lower right.  Click the orange **Save** button in the top right corner.
+    Una vez que hayas seleccionado Alexa Skills Kit, desplázate hacia abajo y encuentra la sección de Verificación del ID de habilidad (skill). Aunque querrás pegar tu ID de skill en el campo ID de habilidad, de momento y para este tutorial, haz clic en Deshabilitar.  Haz clic en el botón **Añadir** situado en la parte inferior derecha.  Haz clic en el botón naranja **Guardar** situado en la esquina superior derecha.
 
-7.  **Finish configuring your function**. Click on your function's name (you'll find it in the middle) and scroll to the bottom of the page, you'll see a Cloud9 code editor.
+7.  **Finaliza la configuración de tu función**. Haz clic en el nombre de tu función (lo encontrarás en el medio de la pantalla) y desplázate hasta el final de la página, verás un editor de código Cloud9.
 
-    We have provided the code for this skill [here](../lambda/py). To properly upload this code to Lambda, you'll need to perform the following:
-    
-    1. This skill uses the [ASK SDK for Python](https://github.com/alexa/alexa-skills-kit-sdk-for-python) for development. The skill code is provided in the [hello_world.py](../lambda/py/hello_world.py), and the dependencies are mentioned in [requirements.txt](../lambda/py/requirements.txt). Download the contents of the [lambda/py](../lambda/py) folder. 
-    2. On your system, navigate to the lambda folder and install the dependencies in a new folder called “skill_env” using the following command:
-    
+    Hemos preparado el código para este skill [aquí](../lambda/py). Para subir el código correctamente a Lambda, necesitarás hacer lo siguiente:
+
+    1. Este skill usa el [SDK de ASK para Python](https://github.com/alexa/alexa-skills-kit-sdk-for-python) para el desarrollo. El código del skill se proporciona en el fichero [hola_mundo.py](../lambda/py/hola_mundo.py), y las dependencias se encuentran en el fichero [requirements.txt](../lambda/py/requirements.txt). Descarga los contenidos de la carpeta [lambda/py](../lambda/py).
+    2. En tu sistema, navega hasta la carpeta lambda e instala las dependencias en una nueva carpeta llamada “skill_env” usando el siguiente comando:
+
         ```
         pip install -r py/requirements.txt -t skill_env
         ```
-        
-    3. Copy the contents of the `lambda/py` folder into the `skill_env` folder. 
-    
+
+    3. Copia los contenidos de la carpeta `lambda/py` en la carpeta `skill_env`.
+
         ```
         cp -r py/* skill_env/
         ```
-    
-    4. Zip the contents of the `skill_env` folder. Remember to zip the **contents** of the folder and **NOT** the folder itself.
-    5. On the AWS Lambda console, change the **code entry type** drop-down to **Upload a .ZIP file**, upload the zip created in the previous step.
-    6. Change the handler name to ``hello_world.handler`` and click on **Save**.
-    
-    *(Optional)* Follow the ASK Python SDK [Getting Started](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#adding-the-ask-sdk-for-python-to-your-project) documentation, to check alternative ways of installing the sdk and deploying to AWS Lambda console.
 
-8. (Optional) Click the **Configure test events** dropdown menu on the top of the page.
-  
-    1. Select 'Alexa Start Session' from the 'Event Template' dropdown.
-    2. Type `LaunchRequest` into the 'Event Name' field.
-    3. Click the orange 'Create' button at the bottom of the page
-    4. Click the **Test** button at the top of the page.
-    5. You should see a light green box with the message: *Execution result: succeeded* at the top of the page.
+    4. Comprime con zip los contenidos de la carpeta `skill_env`. Recuerda hacer un zip con los **contenidos** de la carpeta y **NO** la carpeta en sí misma.
+    5. Desde la consola AWS Lambda, cambia el desplegable **Tipo de entrada de código** a **Cargar un archivo .zip** y sube el fichero zip creado en el paso previo.
+    6. Cambia el nombre del controlador a ``hola_mundo.handler`` y haz clic en **Guardar**.
 
-9. **As a final step, copy the ARN value from the top right corner of the screen.** You will need this value in the next section of this guide.
+    *(Opcional)* Sigue la documentación de [Introducción](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#adding-the-ask-sdk-for-python-to-your-project) del SDK de ASK para Python, para conocer formas alternativas de instalar el SDK y cómo desplegarlo en la consola AWS Lambda.
+
+8. (Opcional) Haz clic en el menú desplegable **Configurar eventos de prueba** situado en la parte superior de la página.
+
+    1. Selecciona 'Amazon Alexa Start Session' del menú desplegable 'Plantilla de eventos'.
+    2. Escribe `LaunchRequest` en el campo 'Nombre del evento'.
+    3. Haz clic en el botón naranja 'Crear' situado en la parte inferior de la página.
+    4. Haz clic en el botón **Probar** situado en la parte superior de la página.
+    5. Deberías ver una caja color verde claro con el mensaje: *Execution result: succeeded* en la parte superior de la página.
+
+9. **Como paso final, copia el valor ARN ubicado en la esquina superior derecha.** Necesitarás este valor en la próxima sección de esta guía. Para continuar haz clic en el siguiente botón.
 
 [![Next Step](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_next_connect_vui_to_code._TTH_.png)](3-connect-vui-to-code.md)

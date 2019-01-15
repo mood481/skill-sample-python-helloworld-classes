@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# This is a simple Hello World Alexa Skill, built using
-# the implementation of handler classes approach in skill builder.
+# Este es un simple skill de Hola Mundo para Alexa, construido usando
+# la implementación de manejadores de clases con Skill Builder.
 import logging
 
 from ask_sdk_core.skill_builder import SkillBuilder
@@ -20,55 +20,55 @@ logger.setLevel(logging.INFO)
 
 
 class LaunchRequestHandler(AbstractRequestHandler):
-    """Handler for Skill Launch."""
+    """Manejador para el lanzador del Skill."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_request_type("LaunchRequest")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Welcome to the Alexa Skills Kit, you can say hello!"
+        speech_text = "¡Bienvenido al kit de Alexa Skills, puedes decir hola!"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Hello World", speech_text)).set_should_end_session(
+            SimpleCard("Hola Mundo", speech_text)).set_should_end_session(
             False)
         return handler_input.response_builder.response
 
 
-class HelloWorldIntentHandler(AbstractRequestHandler):
-    """Handler for Hello World Intent."""
+class HolaMundoIntentHandler(AbstractRequestHandler):
+    """Manejador para el intent Hola Mundo."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
-        return is_intent_name("HelloWorldIntent")(handler_input)
+        return is_intent_name("HolaMundoIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Hello Python World from Classes!"
+        speech_text = "¡Hola Mundo desde clases de Python!"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Hello World", speech_text)).set_should_end_session(
+            SimpleCard("Hola Mundo", speech_text)).set_should_end_session(
             True)
         return handler_input.response_builder.response
 
 
 class HelpIntentHandler(AbstractRequestHandler):
-    """Handler for Help Intent."""
+    """Manejador para el intent Ayuda."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_intent_name("AMAZON.HelpIntent")(handler_input)
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "You can say hello to me!"
+        speech_text = "¡Puedes decirme hola!"
 
         handler_input.response_builder.speak(speech_text).ask(
             speech_text).set_card(SimpleCard(
-                "Hello World", speech_text))
+                "Hola Mundo", speech_text))
         return handler_input.response_builder.response
 
 
 class CancelOrStopIntentHandler(AbstractRequestHandler):
-    """Single handler for Cancel and Stop Intent."""
+    """Manejador único para el intent Cancelación y Parada."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return (is_intent_name("AMAZON.CancelIntent")(handler_input) or
@@ -76,34 +76,15 @@ class CancelOrStopIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speech_text = "Goodbye!"
+        speech_text = "¡Adios!"
 
         handler_input.response_builder.speak(speech_text).set_card(
-            SimpleCard("Hello World", speech_text))
-        return handler_input.response_builder.response
-
-
-class FallbackIntentHandler(AbstractRequestHandler):
-    """AMAZON.FallbackIntent is only available in en-US locale.
-    This handler will not be triggered except in that locale,
-    so it is safe to deploy on any locale.
-    """
-    def can_handle(self, handler_input):
-        # type: (HandlerInput) -> bool
-        return is_intent_name("AMAZON.FallbackIntent")(handler_input)
-
-    def handle(self, handler_input):
-        # type: (HandlerInput) -> Response
-        speech_text = (
-            "The Hello World skill can't help you with that.  "
-            "You can say hello!!")
-        reprompt = "You can say hello!!"
-        handler_input.response_builder.speak(speech_text).ask(reprompt)
+            SimpleCard("Hola Mundo", speech_text))
         return handler_input.response_builder.response
 
 
 class SessionEndedRequestHandler(AbstractRequestHandler):
-    """Handler for Session End."""
+    """Manejador para el fin de sesión."""
     def can_handle(self, handler_input):
         # type: (HandlerInput) -> bool
         return is_request_type("SessionEndedRequest")(handler_input)
@@ -114,8 +95,8 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 
 
 class CatchAllExceptionHandler(AbstractExceptionHandler):
-    """Catch all exception handler, log exception and
-    respond with custom message.
+    """Manejador para capturar todas las excepciones, registrar la excepción y
+    responder con el mensaje personalizado.
     """
     def can_handle(self, handler_input, exception):
         # type: (HandlerInput, Exception) -> bool
@@ -125,17 +106,16 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speech = "Sorry, there was some problem. Please try again!!"
+        speech = "Lo siento, hubo algún problema. Por favor, ¡inténtalo otra vez!"
         handler_input.response_builder.speak(speech).ask(speech)
 
         return handler_input.response_builder.response
 
 
 sb.add_request_handler(LaunchRequestHandler())
-sb.add_request_handler(HelloWorldIntentHandler())
+sb.add_request_handler(HolaMundoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
-sb.add_request_handler(FallbackIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
 
 sb.add_exception_handler(CatchAllExceptionHandler())
