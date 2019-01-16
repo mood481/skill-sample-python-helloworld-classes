@@ -1,13 +1,13 @@
 # Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Interfaz Vocal de Usuario (VUI)](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Función Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-locked._TTH_.png)](./2-lambda-function.md)[![Conectar la VUI al Código](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-locked._TTH_.png)](./3-connect-vui-to-code.md)[![Pruebas](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-locked._TTH_.png)](./4-testing.md)[![Próximos pasos](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-on._TTH_.png)](./5-next-steps.md)
+[Interfaz Vocal de Usuario (VUI)](./1-voice-user-interface.md) - [Función Lambda](./2-lambda-function.md) - [Conectar la VUI al Código](./3-connect-vui-to-code.md) - [Pruebas](./4-testing.md) - [**Próximos pasos**](./5-next-steps.md)
 
 ## Personalización / Próximos pasos
 
 En este punto, ya deberías tener una copia funcional de tu skill Hola Mundo.
 
-Normalmente, si estuvieras construyendo un skill a partir de una de nuestras plantillas, querrías personalizarlo y hacerlo a tu gusto (en lugar de crear un mero clon de la plantilla). Después de eso, querrías certificar y publicar tu skill. Dado que este es un skill de Hola Mundo, no harás eso. En su lugar, visita algunas de estas otras plantillas para conocer más características del Kit de Alexa Skills.
+Normalmente, si estuvieras construyendo un skill a partir de una de nuestras plantillas, querrías personalizarlo y hacerlo a tu gusto (en lugar de crear un mero clon de la plantilla). Después de eso, querrías certificar y publicar tu skill. Dado que este skill es un sencillo skill Hola Mundo, no harás eso. En su lugar, visita algunas de estas otras plantillas para conocer más características del Kit de Alexa Skills. Las instrucciones de estas plantillas están en Inglés pero serán traducidas próximamente.
 
 * [Simple Facts Skill](https://github.com/alexa/skill-sample-python-fact) - Un skill simple de hechos que puede utilizarse como una plantilla inicial.
 * [Color Picker Skill](https://github.com/alexa/skill-sample-python-colorpicker) - Un skill que permite elegir un color para mostrarte cómo se usan los atributos de sesión.

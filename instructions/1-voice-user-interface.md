@@ -1,7 +1,7 @@
 # Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Interfaz Vocal de Usuario (VUI)](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-on._TTH_.png)](./1-voice-user-interface.md)[![Función Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-off._TTH_.png)](./2-lambda-function.md)[![Conectar la VUI al Código](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](./3-connect-vui-to-code.md)[![Pruebas](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](./4-testing.md)[![Próximos pasos](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](./5-next-steps.md)
+[**Interfaz Vocal de Usuario (VUI)**](./1-voice-user-interface.md) - [Función Lambda](./2-lambda-function.md) - [Conectar la VUI al Código](./3-connect-vui-to-code.md) - [Pruebas](./4-testing.md) - [Próximos pasos](./5-next-steps.md)
 
 ## Configurando tu Skill de Alexa en la consola del Desarrollador
 
@@ -27,11 +27,12 @@
 
 8. **Opcional:** Selecciona un intent expandiendo el contenido de la pestaña **Intents** situada en el panel de navegación situado a la izquierda. Añade más declaraciones (utterances) de ejemplo para los intents generados recientemente. Piensa en todas las formas diferentes en las que un usuario podría solicitar que tuviera lugar un intent. Se proporcionan unos pocos ejemplos. Asegúrate de hacer clic en **Save Model** y **Build Model** después de hacer cambios en la pestaña Intents.
 
-9. Si tienes éxito al construir tu modelo de interacción, continúa con el siguiente paso haciendo clic en el botón **Next: Lambda Function**. Si no, deberías ver un error. Intenta resolver los errores. En el siguiente paso de esta guía, crearemos una función Lambda en la consola de desarrollador de AWS, pero mantén esta página del navegador abierta, porque volveremos a ella en [Página #3: Conectar la VUI con el Código](./3-connect-vui-to-code.md).
+9. Si tienes éxito al construir tu modelo de interacción, continúa con el siguiente paso de este tutorial**. Si no, deberías ver un error. Intenta resolver los errores. En el siguiente paso de esta guía, crearemos una función Lambda en la consola de desarrollador de AWS, pero mantén esta página del navegador abierta, porque volveremos a ella en [la página 3 de este tutorial (Conectar la VUI con el Código)](./3-connect-vui-to-code.md).
 
      Si tienes un error en el modelo de interacción, comprueba las sugerencias de la siguiente lista:
 
      *  **¿Copiaste y pegaste correctamente el código proporcionado?**
      *  **¿Añadiste por accidente algún carácter al modelo de interacción?**
 
-[![Siguiente](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_next_lambda_function._TTH_.png)](./2-lambda-function.md)
+[Continuar el tutorial](./2-lambda-function.md)
+----

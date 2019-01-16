@@ -1,7 +1,7 @@
 # Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Interfaz Vocal de Usuario (VUI)](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Función Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-locked._TTH_.png)](./2-lambda-function.md)[![Conectar la VUI al Código](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-locked._TTH_.png)](./3-connect-vui-to-code.md)[![Pruebas](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-on._TTH_.png)](./4-testing.md)[![Próximos pasos](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](./5-next-steps.md)
+[Interfaz Vocal de Usuario (VUI)](./1-voice-user-interface.md) - [Función Lambda](./2-lambda-function.md) - [Conectar la VUI al Código](./3-connect-vui-to-code.md) - [**Pruebas**](./4-testing.md) - [Próximos pasos](./5-next-steps.md)
 
 ## Probando tu skill de Alexa
 
@@ -33,7 +33,7 @@ Hasta ahora, hemos [creado una Interfaz Vocal de Usuario](./1-voice-user-interfa
 
         <img src="https://i.imgur.com/PjclPKq.png" />
 
-    4.  **Escribe un nombre dentro de la caja de diálogo Nombre del evento. Borra el contenido del editor de código, y pega en el editor la petición Lambda que copiaste previamente.** El Nombre del evento sólo es visible para tí. Nombra tu evento de prueba con algo descriptivo y que te sirva para recordar. Para nuestro ejemplo, hemos introducido un nombre de evento "startSession". La ventaja de copiar y pegar tu petición Lambda desde el Alexa Simulator es que puedes probar diferentes utterances y eventos del skill que amplíen las plantillas preconfiguradas de Lambda.
+    4.  **Escribe un nombre dentro de la caja de diálogo Nombre del evento. Borra el contenido del editor de código, y pega en el editor la petición Lambda que copiaste previamente.** El Nombre del evento sólo es visible para tí. Nombra tu evento de prueba con algo descriptivo y que te sirva para recordarlo. Para nuestro ejemplo, hemos introducido un nombre de evento "startSession". La ventaja de copiar y pegar tu petición Lambda desde el Alexa Simulator es que puedes probar diferentes utterances y eventos del skill que amplíen las plantillas preconfiguradas de Lambda.
 
         <img src="https://i.imgur.com/9kZaC9d.png" />
 
@@ -64,6 +64,7 @@ Hasta ahora, hemos [creado una Interfaz Vocal de Usuario](./1-voice-user-interfa
     *  [Echosim.io](https://echosim.io) - una herramienta de pruebas de skills de Alexa, usando un navegador, que facilita la realización de tus pruebas sin necesidad de transportar un dispositivo físico allí donde vayas.
     *  [Pruebas de Unidad con Alexa](https://github.com/alexa/alexa-cookbook/tree/master/testing/postman/README.md) - un acercamiento moderno a la realización de pruebas de unidad con tus skills de Alexa usando [Postman](http://getpostman.com) y [Amazon API Gateway](https://aws.amazon.com/es/api-gateway/).
 
-8.  **Si tu skill de ejemplo está funcionando correctamente, puedes personalizar tu skill.** Continúa con el siguiente paso de este tutorial haciendo clic en el botón siguiente.
+8.  **Si tu skill de ejemplo está funcionando correctamente, puedes personalizar tu skill.**.
 
-<a href="./5-next-steps.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_next_customization._TTH_.png" />
+[Continuar el tutorial](5-next-steps.md)
+----
