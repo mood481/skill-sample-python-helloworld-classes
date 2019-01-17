@@ -1,19 +1,19 @@
-# Setting Up Your First Lambda Role
+# Configurando tu primer Rol para Lambda
 
-If you're reading this page, you're probably setting up your first role for a Lambda function.  While it's an easy process, we want to make sure you understand all of the "whys" that go into this process.
+Si estás leyendo esta página, probablemente estás configurando tu primer rol para una función Lambda. Aunque es un proceso sencillo, queremos asegurarnos de que entiendas todos los pasos que forman parte de este proceso.
 
-1.  **Choose "Create a custom role" from the Role dropdown.**  This will launch a new tab in your browser, so make sure that popups are enabled when you attempt this.
+1.  **Elige "Crear un rol personalizado" desde el menú desplegable de Roles de ejecución.**  Esto lanzará una nueva pestaña en tu navegador, así que asegúrate que las ventanas emergentes están habilitadas cuando intentes hacer esto.
 
-    ![](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/lambda-role/1-choose-custom-role._TTH_.png)
+    ![](https://i.imgur.com/s8jQwp6.jpg)
 
-2.  **You are now creating a new IAM role.**  IAM stands for Identity and Access Management.  ([You can read more about IAM here.](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html))  By creating this role, you are enabling your Lambda function to be able to create Amazon CloudWatch logs for your function.  ([You can read more about managing permissions with IAM roles here.](https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role))
+2.  **Estás creando un nuevo rol IAM.**  IAM significa Identity and Access Management o Gestión de Accesos e Identidad.  ([Puedes leer más acerca de IAM aquí.](https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/introduction.html))  Al crear este rol, estás permitiendo que tu función Lambda sea capaz de crear registros Amazon CloudWatch para tu función.  ([Puedes leer más sobre la gestión de permisos con roles IAM aquí.](https://docs.aws.amazon.com/es_es/lambda/latest/dg/intro-permission-model.html))
 
-3.  **You don't need to make any changes.  Click the Allow button in the bottom right corner.**
+3.  **No necesitas hacer ningún cambio.  Haz clic en el botón Permitir situado en la parte inferior derecha.**
 
-    ![](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/lambda-role/3-allow-button._TTH_.png)
+    ![](https://i.imgur.com/NCaYtQt.png)
 
-4.  **This should close the new tab, and populate your Lambda function appropriately.**  If your "Lambda function handler and role" section doesn't look like the screenshot below, try refreshing your page and selecting your new role from the "existing role" dropdown.
+4.  **Esto debería cerrar la nueva pestaña, y completar la información que necesita tu función Lambda.** Si tu sección "Rol de ejecución" no tiene el aspecto de la captura de pantalla que se muestra a continuación, intenta refrescar la página y selecciona el nuevo rol del desplegable "Rol existente".
 
-    ![](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/lambda-role/4-lambda-function-role._TTH_.png)
+    ![](https://i.imgur.com/BwIBiHc.png)
 
-5.  **You can now return to what you were doing.**
+5.  **Puedes volver con lo que estabas haciendo.**

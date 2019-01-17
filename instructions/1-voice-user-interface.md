@@ -1,39 +1,38 @@
-# Build an Alexa Hello World Skill in ASK Python SDK
+# Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-on._TTH_.png)](./1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-off._TTH_.png)](./2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](./3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](./4-testing.md)[![Next steps](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](./5-next-steps.md)
+[**Interfaz Vocal de Usuario (VUI)**](./1-voice-user-interface.md) - [Función Lambda](./2-lambda-function.md) - [Conectar la VUI al Código](./3-connect-vui-to-code.md) - [Pruebas](./4-testing.md) - [Próximos pasos](./5-next-steps.md)
 
-## Setting up Your Alexa Skill in the Developer Console
+## Configurando tu Skill de Alexa en la consola del Desarrollador
 
-1.  **Go to the [Alexa Developer Console](http://developer.amazon.com/alexa?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=quiz-game-python-V2_GUI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_quiz-game-python-V2_GUI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).  In the top-right corner of the screen, click the "Sign In" button.**
-(If you don't already have an account, you will be able to create a new one for free.)
+1.  **Ve a la [Alexa Developer Console](https://developer.amazon.com/es/alexa?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=quiz-game-python-V2_GUI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_quiz-game-python-V2_GUI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).  En la esquina superior derecha de la pantalla, haz clic en el botón "Identificarse".**
+(Si aún no tienes una cuenta, podrás crear una nueva gratuitamente.)
 
-1.  Once you have signed in, select the **Developer Console** link and then **Alexa Skills Kit**.
+2.  Una vez que hayas iniciado la sesión, haz clic en **Mis consolas Alexa** y selecciona **Skills**.
 
-1.  From the **Alexa Developer Console** select the **Create Skill** button near the top-right of the list of your Alexa Skills.
+3.  Desde la **Alexa Developer Console** haz clic en el botón **Create Skill**, situado a la derecha sobre tu lista de Skills de Alexa.
 
-1. Give your new skill a **Name**, for example, 'Greeter'. This is the name that will be shown in the Alexa Skills Store, and the name your users will refer to.
+4. Da a tu nuevo skill un **Nombre**, por ejemplo, 'Saludador'. Este es el nombre que se mostrará en la tienda de Skills de Alexa, el nombre que emplearán tus usuarios.
 
-1. Select the Default Language.  This tutorial will presume you have selected 'English (US)'.
+5. Selecciona el idioma por defecto.  Este tutorial asume que has seleccionado 'Spanish (ES)' para usar español como idioma por defecto.
 
-1. Select the **Custom** model under the *'Choose a model to add to your skill'* section. Click the **Create Skill** button at the top right.
+6. Selecciona el modelo **Custom** en la sección *'Choose a model to add to your skill'*. Haz clic en el botón **Create Skill** situado en la parte superior derecha. Se creará un nuevo skill y podremos comenzar a trabajar con él.
 
-1. Choose **Start from scratch** from the *Choose a template* section and click the **Choose** button on the top right.
+7. **Construye el modelo de interacción de tu skill**
+	1. En el panel de navegación situado a la izquierda de la pantalla, selecciona la pestaña **JSON Editor** que se encuentra bajo **Interaction Model**. En el campo de texto que se proporciona, reemplaza el código existente con el [contenido del fichero](../models/es-ES.json) proporcionado para el [Modelo de Interacción](../models/es-ES.json).  Haz clic sobre el botón **Save Model**.
+    2. Si quieres cambiar el nombre de invocación del skill, selecciona la pestaña **Invocation**. Introduce un nuevo nombre para el campo **Skill Invocation Name**. Este el nombre que tus usuarios necesitarán decir para iniciar el skill. En este caso, se ha preconfigurado para que sea 'saludador'.
+    3. Haz clic en el botón "Build Model" para construir tu modelo de interacción.
 
-1. **Build the Interaction Model for your skill**
-	1. On the left hand navigation panel, select the **JSON Editor** tab under **Interaction Model**. In the textfield provided, replace any existing code with the code provided in the [Interaction Model](../models/en-US.json).  Click **Save Model**.
-    2. If you want to change the skill invocation name, select the **Invocation** tab. Enter a **Skill Invocation Name**. This is the name that your users will need to say to start your skill.  In this case, it's preconfigured to be 'greeter'.
-    3. Click "Build Model".
+	**Nota:**  Notarás que las pestañas **Intents** y **Slot Types** se llenarán automáticamente con los datos almacenados en el fichero JSON que contiene el modelo de interación que acabas de aplicar a tu skill. Siéntete libre de explorar los cambios y para aprender más sobre **Intents**, **Slots**, y **Utterances** abre nuestra [documentación técnica en una nueva pestaña](https://developer.amazon.com/es/docs/custom-skills/create-intents-utterances-and-slots.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=quiz-game-python-V2_GUI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_quiz-game-python-V2_GUI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).
 
-	**Note:** You should notice that **Intents** and **Slot Types** will auto populate based on the JSON Interaction Model that you have now applied to your skill. Feel free to explore the changes here, to learn about **Intents**, **Slots**, and **Utterances** open our [technical documentation in a new tab](https://developer.amazon.com/docs/custom-skills/create-intents-utterances-and-slots.html?&sc_category=Owned&sc_channel=RD&sc_campaign=Evangelism2018&sc_publisher=github&sc_content=Survey&sc_detail=quiz-game-python-V2_GUI-1&sc_funnel=Convert&sc_country=WW&sc_medium=Owned_RD_Evangelism2018_github_Survey_quiz-game-python-V2_GUI-1_Convert_WW_beginnersdevs&sc_segment=beginnersdevs).
+8. **Opcional:** Selecciona un intent expandiendo el contenido de la pestaña **Intents** situada en el panel de navegación situado a la izquierda. Añade más declaraciones (utterances) de ejemplo para los intents generados recientemente. Piensa en todas las formas diferentes en las que un usuario podría solicitar que tuviera lugar un intent. Se proporcionan unos pocos ejemplos. Asegúrate de hacer clic en **Save Model** y **Build Model** después de hacer cambios en la pestaña Intents.
 
-7. **Optional:** Select an intent by expanding the **Intents** from the left side navigation panel. Add some more sample utterances for your newly generated intents. Think of all the different ways that a user could request to make a specific intent happen. A few examples are provided. Be sure to click **Save Model** and **Build Model** after you're done making changes here.
+9. Si tienes éxito al construir tu modelo de interacción, continúa con el siguiente paso de este tutorial**. Si no, deberías ver un error. Intenta resolver los errores. En el siguiente paso de esta guía, crearemos una función Lambda en la consola de desarrollador de AWS, pero mantén esta página del navegador abierta, porque volveremos a ella en [la página 3 de este tutorial (Conectar la VUI con el Código)](./3-connect-vui-to-code.md).
 
-8. If your interaction model builds successfully, proceed to the next step. If not, you should see an error. Try to resolve the errors. In our next step of this guide, we will be creating our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here on [Page #3: Connect VUI to Code](./3-connect-vui-to-code.md).
+     Si tienes un error en el modelo de interacción, comprueba las sugerencias de la siguiente lista:
 
-     If you get an error from your interaction model, check through this list:
+     *  **¿Copiaste y pegaste correctamente el código proporcionado?**
+     *  **¿Añadiste por accidente algún carácter al modelo de interacción?**
 
-     *  **Did you copy & paste the provided code correctly?**
-     *  **Did you accidentally add any characters to the Interaction Model?**
-
-[![Next](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_next_lambda_function._TTH_.png)](./2-lambda-function.md)
+[Continuar el tutorial](./2-lambda-function.md)
+----

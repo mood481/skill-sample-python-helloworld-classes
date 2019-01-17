@@ -1,19 +1,19 @@
-# Build An Alexa Hello World Skill in ASK Python SDK
+# Construye un Skill de Hola Mundo para Alexa con el SDK de ASK para Python
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-[![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-locked._TTH_.png)](./1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-locked._TTH_.png)](./2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-locked._TTH_.png)](./3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-locked._TTH_.png)](./4-testing.md)[![Next Steps](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-on._TTH_.png)](./5-next-steps.md)
+[Interfaz Vocal de Usuario (VUI)](./1-voice-user-interface.md) - [Función Lambda](./2-lambda-function.md) - [Conectar la VUI al Código](./3-connect-vui-to-code.md) - [Pruebas](./4-testing.md) - [**Próximos pasos**](./5-next-steps.md)
 
-## Customization / Next Steps
+## Personalización / Próximos pasos
 
-At this point, you should have a working copy of our Hello World skill. 
+En este punto, ya deberías tener una copia funcional de tu skill Hola Mundo.
 
-Normally, if you were building a skill from one of our templates, you would customize it and make it your own (as opposed to a clone of our template).  After that, you would certify and publish the skill.  Given that this is the Hello World skill, you won't be doing that.  Instead, check out some of these other templates which will start to show you more of the features of the Alexa Skills Kit.
+Normalmente, si estuvieras construyendo un skill a partir de una de nuestras plantillas, querrías personalizarlo y hacerlo a tu gusto (en lugar de crear un mero clon de la plantilla). Después de eso, querrías certificar y publicar tu skill. Dado que este skill es un sencillo skill Hola Mundo, no harás eso. En su lugar, visita algunas de estas otras plantillas para conocer más características del Kit de Alexa Skills. Las instrucciones de estas plantillas están en Inglés pero serán traducidas próximamente.
 
-* [Simple Facts Skill](https://github.com/alexa/skill-sample-python-fact) - A simple facts skill that can be used as a starter template.
-* [Color Picker Skill](https://github.com/alexa/skill-sample-python-colorpicker) - A simple color picker skill that shows  how to use session attributes.
-* [High Low Game Skill](https://github.com/alexa/skill-sample-python-highlowgame) - the High Low Game skill is a simple example and a great next step after Hello World. The skill asks user to guess a number and tells if the guessed number is higher or lower than the correct guess. 
-* [Quiz Skill](https://github.com/alexa/skill-sample-python-quiz-game) - a skill where the user can ask for information on one of the states of US and play a quiz around the states. This sample skill shows off the render template directive usage.
-* [Fact w/In Skill Purchasing](https://github.com/alexa/skill-sample-python-fact-in-skill-purchases) - takes the Fact skill and adds in skill purchasing to it.
-* [Pet Match Skill](https://github.com/alexa/skill-sample-python-pet-match) - a skill where the user is asked for their ideal requirements and matches with a dog. Shows off the dialog management and entity resolution.
-* [City Guide Skill](https://github.com/alexa/skill-sample-python-city-guide) - a skill that provides restaurant recommendations, attractions and current weather for a city. Shows off the external API call usage.
-* [How-To Skill](https://github.com/alexa/skill-sample-python-how-to) - a skill that provides how to obtain a random item. Shows off multiple locales and localization usage.
+* [Simple Facts Skill](https://github.com/alexa/skill-sample-python-fact) - Un skill simple de hechos que puede utilizarse como una plantilla inicial.
+* [Color Picker Skill](https://github.com/alexa/skill-sample-python-colorpicker) - Un skill que permite elegir un color para mostrarte cómo se usan los atributos de sesión.
+* [High Low Game Skill](https://github.com/alexa/skill-sample-python-highlowgame) - El skill de juego Mayor Menor es un ejemplo sencillo y una buena continuación después del Hola Mundo. El skill pregunta al usuario que diga un número y le contesta si el número es mayor o menor que el número que debe adivinar.
+* [Quiz Skill](https://github.com/alexa/skill-sample-python-quiz-game) - Un skill donde se pregunta al usuario por información sobre un estado de los Estados Unidos y se le hacen preguntas sobre los distintos estados. Este skill de ejemplo muestra el uso de la directiva de renderización de plantillas.
+* [Fact w/In Skill Purchasing](https://github.com/alexa/skill-sample-python-fact-in-skill-purchases) - Coge el skill Fact y le añade una opción de compras dentro del skill.
+* [Pet Match Skill](https://github.com/alexa/skill-sample-python-pet-match) - Un skill donde se le pregunta al usuario por las características ideales que tendría su mascota y encuentra un perro que cumpla con las expectativas. Este skill muestra la gestión de diálogos y la resolución de entidades.
+* [City Guide Skill](https://github.com/alexa/skill-sample-python-city-guide) - Un skill que proporciona recomendaciones de restaurantes, eventos y el tiempo actual de una ciudad. Este skill muestra el uso de APIs externas.
+* [How-To Skill](https://github.com/alexa/skill-sample-python-how-to) - Un skill que proporciona un tutorial de cómo obtener un elemento aleatorio. Este skill muestra el uso de distintos idiomas y localizaciones.
